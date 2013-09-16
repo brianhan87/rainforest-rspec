@@ -1,8 +1,10 @@
 require 'spec_helper'
 
 describe Product do
+  let(:product) { Product.new(
+    :name => "something", :description => "something else", :price => 1) }
+
   describe "validations" do
-    let(:product) { Product.new(:name => "something", :description => "something else", :price => 1 ) }
 
     it "should have a valid factory" do
       product.should be_valid
@@ -18,9 +20,22 @@ describe Product do
       product.should_not be_valid
     end
 
-    it "should have a price" do
+    it "should validate presence of price" do
       product.price = nil
       product.should_not be_valid
     end
+
+    it "should validate numericality of price" do
+      product.price = "bob"
+      product.should_not be_valid
+    end
   end
+
+  # describe "formatted price" do
+  #   it "should have a formatted price" do
+  #     product.price = 10099
+  #     product.price.should == 100.99
+  #   end
+  # end
+
 end

@@ -1,4 +1,4 @@
 class Product < ActiveRecord::Base
-  # attr_accessor :name, :description, :price
   validates :name, :description, :price,  presence: true
+  validates :price, numericality: { only_integer: true }
 end
