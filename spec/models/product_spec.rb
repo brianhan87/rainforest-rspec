@@ -1,8 +1,7 @@
 require 'spec_helper'
 
 describe Product do
-  let(:product) { Product.new(
-    :name => "something", :description => "something else", :price => 1) }
+  let(:product) { FactoryGirl.build(:product) }
 
   describe "validations" do
 
