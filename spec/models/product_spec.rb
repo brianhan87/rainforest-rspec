@@ -1,32 +1,35 @@
 require 'spec_helper'
 
 describe Product do
+
   let(:product) { FactoryGirl.build(:product) }
 
   describe "validations" do
 
     it "should have a valid factory" do
-      product.should be_valid
+      # product.should be_valid
+      expect(product).to be_valid
     end
 
     it "should validate presence of name" do
       product.name = nil
-      product.should_not be_valid
+      # product.should_not be_valid
+      expect(product).to_not be_valid
     end
 
     it "should validate presence of description" do
       product.description = nil
-      product.should_not be_valid
+      expect(product).to_not be_valid
     end
 
     it "should validate presence of price" do
       product.price = nil
-      product.should_not be_valid
+      expect(product).to_not be_valid
     end
 
     it "should validate numericality of price" do
       product.price = "bob"
-      product.should_not be_valid
+      expect(product).to_not be_valid
     end
   end
 
