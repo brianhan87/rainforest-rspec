@@ -31,6 +31,12 @@ describe Product do
     end
   end
 
+  # describe "associations" do
+  #   it "should have many reviews" do
+  #     # do something
+  #   end
+  # end
+
   # describe "formatted price" do
   #   it "should have a formatted price" do
   #     product.price = 10099
