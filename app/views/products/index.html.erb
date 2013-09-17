@@ -1,3 +1,9 @@
 <% @products.each do |product| %>
-  product.name
+  <%= product.name %>
+  <%= product.description %>
+  <%= product.price %>
 <% end %>
+
+<br/>
+
+<%= @products.inspect %>
