@@ -35,6 +35,12 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails','~> 4.0'
+  gem 'capybara'
+end
+
+group :development do
+  gem "better_errors"
+  gem 'binding_of_caller'
 end
 
 # group :test, :development do
